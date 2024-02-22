@@ -16,18 +16,15 @@ jobs:
         run: ruby summarise.rb
         # run: create-master-json.rb
 
-      # - name: commit files
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add -A
-      #     git diff-index --quiet HEAD || (git commit -a -m "update summary" --allow-empty)
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "update master json consolidation file" --allow-empty)
+          git push
 
-      # - name: push changes
-      #   uses: ad-m/github-push-action@v0.6.0
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: main
   runs-brag-doc-creation-script:
     name: create brag doc
     runs-on: ubuntu-latest
@@ -48,11 +45,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git pull
           git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "update summary" --allow-empty)
+          git diff-index --quiet HEAD || (git commit -a -m "update brag docs" --allow-empty)
           git push
-
-      # - name: push changes
-      #   uses: ad-m/github-push-action@v0.6.0
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: main
