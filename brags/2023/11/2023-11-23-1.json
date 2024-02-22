@@ -1,6 +1,6 @@
 {
   "title": "I reviewed a PR and found a bug that would have destroyed the world",
   "links": ["http://example.com","http://slack.com"],
-  "categories": ["critique", "articulation"],
+  "labels": ["critique", "articulation"],
   "date": "2023/11/23"
 }

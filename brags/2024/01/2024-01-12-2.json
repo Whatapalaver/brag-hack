@@ -1,6 +1,6 @@
 {
   "title": "I fixed cashflow",
   "links": ["http://example.com"],
-  "categories": ["tools", "domain"],
+  "labels": ["tools", "domain"],
   "date": "2024/01/12"
 }

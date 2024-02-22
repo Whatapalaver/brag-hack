@@ -1,6 +1,6 @@
 {
   "title": "I created a github action",
   "links": ["http://example.com"],
-  "categories": ["collaboration", "impact", "tools"],
+  "labels": ["collaboration", "impact", "tools"],
   "date": "2024/02/21"
 }
