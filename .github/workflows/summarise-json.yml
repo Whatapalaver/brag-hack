@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: run summarise script
-        run: ruby summarise.py
+        run: ruby summarise.rb
 
       - name: commit files
         run: |
