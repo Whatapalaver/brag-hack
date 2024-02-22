@@ -1,5 +1,5 @@
 {
-  "title": "I wrote an amazing blog post and it became the most popular blog post on the internet",
+  "text": "I wrote an amazing blog post and it became the most popular blog post on the internet",
   "links": ["http://example.com"],
   "labels": ["documentation", "articulation"],
   "date": "2023/12/3"

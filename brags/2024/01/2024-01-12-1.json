@@ -1,5 +1,5 @@
 {
-  "title": "Answered a question about a ping",
+  "text": "Answered a question about a ping",
   "links": ["http://example.com"],
   "labels": ["questions", "articulation"],
   "date": "2024/01/12"

@@ -1,6 +1,6 @@
 {
-  "title": "I worked on a hack day project to make populating brag docs seemlessly",
-  "links": ["http://example.com"],
-  "labels": ["collaboration", "impact"],
-  "date": "2024/02/22"
+  "text":"I actually fixed this one",
+  "links":[],
+  "labels":["temp label"],
+  "date":"2024-02-22"
 }
