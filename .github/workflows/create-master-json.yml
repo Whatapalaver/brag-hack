@@ -1,9 +1,9 @@
-name: create-master-json-file
-run-name: ${{ github.actor }} triggered the action to consolidate brag docs
+name: create-master-json-and-brag-file
+run-name: ${{ github.actor }} triggered the action to consolidate brags and create brag doc
 on: [push]
 jobs:
-  runs-summarise-script:
-    name: summarise-scripts
+  runs-consolidate-json-script:
+    name: consolidate-scripts
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
@@ -16,31 +16,31 @@ jobs:
         run: ruby summarise.rb
         # run: create-master-json.rb
 
-      - name: commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "update summary" --allow-empty)
+      # - name: commit files
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git add -A
+      #     git diff-index --quiet HEAD || (git commit -a -m "update summary" --allow-empty)
 
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+      # - name: push changes
+      #   uses: ad-m/github-push-action@v0.6.0
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: main
   runs-brag-creation-script:
     name: create-brag-doc
-    needs: runs-summarise-script
-    runs-on: ubuntu-latest
+    needs: consolidate-scripts
+    # runs-on: ubuntu-latest
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v4
+      # - name: checkout repo content
+      #   uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
-      - run: bundle install
+      # - uses: ruby/setup-ruby@v1
+      # - run: bundle install
 
       - name: run summarise script
-        run: ruby summarise.rb
+        run: ruby brag.rb
         # run: create-master-json.rb
 
       - name: commit files
